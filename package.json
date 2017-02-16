@@ -1,6 +1,5 @@
 {
-  "name": "site",
-  "version": "0.1.0",
+  "name": "sandpit-demos",
   "private": true,
   "dependencies": {
     "react": "^15.4.2",
