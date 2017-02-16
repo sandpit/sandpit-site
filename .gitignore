@@ -3,9 +3,6 @@
 # dependencies
 node_modules
 
-# testing
-coverage
-
 # production
 build
 
@@ -13,6 +10,3 @@ build
 .DS_Store
 .env
 npm-debug.log
-
-/public
-/dist
