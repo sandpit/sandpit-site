@@ -2,13 +2,12 @@
   "name": "sandpit-demos",
   "private": true,
   "dependencies": {
-    "babel-polyfill": "^6.20.0",
     "canvas": "^1.6.2",
     "pushstate-server": "^2.1.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-scripts": "0.8.5",
-    "sandpit": "^0.1.6`",
+    "sandpit": "^0.1.7",
     "three": "^0.83.0",
     "three-trackballcontrols": "^0.0.5"
   },
