@@ -1,4 +1,3 @@
-import 'babel-polyfill'
 import queryfetch from 'queryfetch'
 import './styles/index.css'
 

@@ -2,18 +2,27 @@
   "name": "sandpit-demos",
   "private": true,
   "dependencies": {
+    "babel-polyfill": "^6.20.0",
+    "canvas": "^1.6.2",
+    "pushstate-server": "^2.1.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "canvas": "^1.6.2",
     "react-scripts": "0.8.5",
-    "sandpit": "^0.1.4",
+    "sandpit": "^0.1.6`",
     "three": "^0.83.0",
     "three-trackballcontrols": "^0.0.5"
   },
+  "devDependencies": {
+    "standard": "^8.6.0"
+  },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "serve": "pushstate-server build",
+    "build": "npm run build:site && npm run build:dist && npm run build:docs",
+    "build:site": "react-scripts build",
+    "build:dist": "cp -r node_modules/sandpit/dist build/",
+    "build:docs": "cp -r node_modules/sandpit/docs build/",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "deploy": "npm run build && surge -p site/build -d sandpitjs.com"
   }
 }

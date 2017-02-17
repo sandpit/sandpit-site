@@ -4,7 +4,7 @@
  * https://github.com/soulwire/sketch.js
  */
 
-import Sandpit, { Mathematics } from '../../../lib/Sandpit'
+import Sandpit, { Mathematics } from 'sandpit'
 
 const playground = () => {
   // Sandpit supports using an existing canvas - just pass

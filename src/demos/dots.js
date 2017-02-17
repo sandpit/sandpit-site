@@ -3,7 +3,7 @@
  * https://codepen.io/stefanweck/details/YNPdRR
  */
 
-import Sandpit, { Mathematics } from '../../../lib/Sandpit'
+import Sandpit, { Mathematics } from 'sandpit'
 
 const playground = () => {
   // Make a new sandpit

@@ -1,4 +1,4 @@
-import Sandpit, { Color } from '../../../lib/Sandpit'
+import Sandpit, { Color } from 'sandpit'
 import { WebGLRenderer, PerspectiveCamera, PCFSoftShadowMap,
          SpotLight, Scene, BoxGeometry, MeshPhongMaterial, Mesh } from 'three'
 
