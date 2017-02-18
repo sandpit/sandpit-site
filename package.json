@@ -16,7 +16,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "serve": "pushstate-server build",
+    "serve": "npm run build && pushstate-server build",
     "build": "npm run build:site && npm run build:dist && npm run build:docs",
     "build:site": "react-scripts build",
     "build:dist": "cp -r node_modules/sandpit/dist build/",
