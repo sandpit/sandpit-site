@@ -22,6 +22,6 @@
     "build:dist": "cp -r node_modules/sandpit/dist build/",
     "build:docs": "cp -r node_modules/sandpit/docs build/",
     "test": "react-scripts test --env=jsdom",
-    "deploy": "npm run build && surge -p site/build -d sandpitjs.com"
+    "deploy": "npm run build && surge -p build -d sandpitjs.com"
   }
 }
