@@ -30,8 +30,6 @@ const playground = () => {
   // The particle function is a self contained class that manages
   // each individual particle
   function Particle () {
-    // Take the stroke width from the settings
-    const strokeWidth = sandpit.settings.strokeWidth
     // Grab a random background
     const randomBackground = Math.floor(random() * Object.keys(backgrounds).length)
     const color = backgrounds[Object.keys(backgrounds)[randomBackground]]
@@ -46,6 +44,16 @@ const playground = () => {
     const acceleration = new Vector(0, 0)
     const attraction = new Vector(0, 0)
     const previousPositions = []
+
+    this.change = (setting) => {
+      switch (setting) {
+        case 'strokeWidth':
+          ctx.lineWidth = setting
+          break
+        default:
+          break
+      }
+    }
 
     this.update = () => {
       // Create a new force
@@ -82,7 +90,7 @@ const playground = () => {
 
       // Start drawing the particle
       ctx.beginPath()
-      ctx.lineWidth = strokeWidth
+      ctx.lineWidth = sandpit.settings.strokeWidth
       ctx.strokeStyle = strokeStyle
       if (previousPositions.length > 1) {
         // Draw along the previous points
@@ -96,21 +104,35 @@ const playground = () => {
       }
 
       // Add the most recent position to previous positions
-      previousPositions.push(position.clone())
+      if (previousPositions.length < sandpit.settings.size + 1) {
+        previousPositions.push(position.clone())
+      } else {
+        previousPositions.splice(0, previousPositions.length - sandpit.settings.size)
+      }
       ctx.stroke()
     }
   }
 
-  sandpit.change = () => {
+  sandpit.setup = () => {
+    particles = Array(Math.round(sandpit.settings.count)).fill().map(particle => new Particle())
+  }
+
+  sandpit.change = (setting) => {
     // When the settings change, update the background color
     // and the particles array
     sandpit.fill(Color(sandpit.settings.background).toString())
-    particles = Array(Math.round(sandpit.settings.count)).fill().map(() => new Particle())
+    particles.forEach(particle => particle.change(setting))
   }
 
   sandpit.loop = () => {
     // If keep drawing is disable, fill the background
     if (!sandpit.settings.keepDrawing) sandpit.fill(Color(sandpit.settings.background).alpha(0.25).toString())
+    // Re-count particles
+    if (particles.length > sandpit.settings.count) {
+      particles = particles.slice(particles.length - sandpit.settings.count, sandpit.settings.count)
+    } else if (particles.length < sandpit.settings.count) {
+      particles.push(new Particle())
+    }
     // Update each particle
     particles.forEach(particle => particle.update())
   }
@@ -122,8 +144,6 @@ const playground = () => {
 
   // Start the party!
   sandpit.start()
-  // Ensure the background color is updated
-  sandpit.change()
 
   // Keep the demo in the query string when resetting
   sandpit.reset = () => {
