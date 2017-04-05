@@ -7,7 +7,7 @@
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-scripts": "0.8.5",
-    "sandpit": "^0.1.8",
+    "sandpit": "^0.1.11",
     "three": "^0.83.0",
     "three-trackballcontrols": "^0.0.5"
   },
