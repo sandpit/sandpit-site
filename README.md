@@ -10,15 +10,27 @@ First up, clone the repo:
 ```
 git clone https://github.com/sandpit/sandpit-site.git
 cd sandpit-site
-npm install
+```
+
+If you don't have cairo, you'll need it:
+
+```
+brew update
+brew install cairo
+```
+
+Then:
+
+```
+yarn
 ```
 
 Maybe make a cup of tea? You've earned it.
 
-Fire it up with:
+Once everything is done, fire it up with:
 
 ```
-npm start
+yarn start
 ```
 
 ## Adding a demo
