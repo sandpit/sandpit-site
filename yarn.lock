@@ -4747,9 +4747,9 @@ rx-lite@^3.1.2:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/rx-lite/-/rx-lite-3.1.2.tgz#19ce502ca572665f3b647b10939f97fd1615f102"
 
-sandpit@^0.1.8:
-  version "0.1.9"
-  resolved "https://registry.yarnpkg.com/sandpit/-/sandpit-0.1.9.tgz#39a6052d5931e4ffa101a5532e47d09ffdd69a94"
+sandpit@^0.1.11:
+  version "0.1.11"
+  resolved "https://registry.yarnpkg.com/sandpit/-/sandpit-0.1.11.tgz#9ce5f0860261072612c15c4ddf42bff67d848894"
   dependencies:
     color "^1.0.3"
     dat.gui "^0.6.1"
