@@ -1,4 +1,4 @@
-import queryfetch from 'queryfetch'
+import queryString from 'query-string'
 import './styles/index.css'
 
 let demos = require('./demos/index').default
@@ -17,7 +17,7 @@ Object.keys(demos).forEach(demo => {
   div.appendChild(link)
 })
 
-let params = queryfetch.parse(window.location.search)
+let params = queryString.parse(window.location.search)
 playground = params.demo
   ? new demos[params.demo]()
   : new demos[Object.keys(demos)[0]]()

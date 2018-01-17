@@ -1,27 +1,28 @@
 {
-  "name": "sandpit-demos",
+  "name": "sandpit-site",
   "private": true,
   "dependencies": {
-    "canvas": "^1.6.2",
-    "pushstate-server": "^2.1.0",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "react-scripts": "0.8.5",
+    "canvas": "^1.6.9",
+    "pushstate-server": "^3.0.1",
+    "query-string": "^5.0.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-scripts": "1.1.0",
     "sandpit": "^0.1.11",
-    "three": "^0.83.0",
-    "three-trackballcontrols": "^0.0.5"
+    "three": "^0.89.0",
+    "three-trackballcontrols": "^0.0.7"
   },
   "devDependencies": {
-    "standard": "^8.6.0"
+    "standard": "^10.0.3"
   },
   "scripts": {
     "start": "react-scripts start",
-    "serve": "npm run build && pushstate-server build",
-    "build": "npm run build:site && npm run build:dist && npm run build:docs",
+    "serve": "yarn run build && pushstate-server build",
+    "build": "yarn run build:site && yarn run build:dist && yarn run build:docs",
     "build:site": "react-scripts build",
     "build:dist": "cp -r node_modules/sandpit/dist build/",
     "build:docs": "cp -r node_modules/sandpit/docs build/",
     "test": "react-scripts test --env=jsdom",
-    "deploy": "npm run build && surge -p build -d sandpitjs.com"
+    "deploy": "yarn run build && surge -p build -d sandpitjs.com"
   }
 }
