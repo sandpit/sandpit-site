@@ -9,7 +9,7 @@
     "react-dom": "^16.2.0",
     "react-scripts": "1.1.0",
     "sandpit": "^0.1.14",
-    "three": "^0.89.0",
+    "three": "^0.83.0",
     "three-trackballcontrols": "^0.0.7"
   },
   "devDependencies": {
